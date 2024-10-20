@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Karaoke Ilegal Pekanbaru</title>
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+    <style>
+        /* General Styles */
+        body, html {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            background-color: #f0f0f0;
+        }
+
+        /* Landing Page Styles */
+        .landing-container {
+            text-align: center;
+            max-width: 600px;
+            margin: 20px auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .landing-title {
+            font-size: 2em;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .landing-subtitle {
+            font-size: 1.2em;
+            color: #666;
+            margin-bottom: 20px;
+        }
+
+        /* Hidden Map Styles */
+        #map-container {
+            display: none; /* Initially hidden */
+            width: 100%;
+            height: 100%; /* Set a specific height */
+            border: none;
+        }
+
+        /* Info Styles */
+        .info-container {
+            display: none; /* Default to hidden */
+            max-width: 600px;
+            margin: 20px auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Bootstrap Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-primary">
+        <a class="navbar-brand text-white" href="#">
+            <i class="fas fa-map-marker-alt"></i> Karaoke Ilegal Pekanbaru
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link text-white" href="#" onclick="showInfo()">Info</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-white" href="#" onclick="showMap()">Maps</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Info Page Content -->
+    <div class="info-container" id="info-page">
+        <h1 class="landing-title">Informasi Peta Karaoke Ilegal</h1>
+        <p class="landing-subtitle">Peta ini menampilkan lokasi karaoke ilegal di Pekanbaru, termasuk jarak ke tempat ibadah dan pendidikan. Gunakan informasi ini untuk memahami kepatuhan terhadap peraturan yang ada.</p>
+    </div>
+
+    <!-- Iframe for embedding the permalink map -->
+    <iframe id="map-container" 
+            src="http://localhost:8087/mapstore/#/permalink/24834699-5177-4850-826c-3b8b6ff25cd7"
+            allowfullscreen>
+    </iframe>
+
+    <!-- Bootstrap JS, Popper.js, and jQuery -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <script>
+        // Function to show the map and hide the info page
+        function showMap() {
+            document.getElementById('info-page').style.display = 'none';
+            document.getElementById('map-container').style.display = 'block';
+        }
+
+        // Function to show the info page and hide the map
+        function showInfo() {
+            document.getElementById('info-page').style.display = 'block';
+            document.getElementById('map-container').style.display = 'none';
+        }
+
+        // Show info by default on page load
+        window.onload = function() {
+            showInfo();
+        }
+    </script>
+</body>
+</html>
